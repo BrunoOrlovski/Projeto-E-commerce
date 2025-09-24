@@ -1,0 +1,102 @@
+
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+
+.header-nav {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    background-color: #1a1a1a; 
+    padding: 8px 20px;
+    color: #f0f0f0; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    position: sticky; 
+    top: 0;
+    z-index: 999; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+
+.header-logo-section {
+    display: flex; 
+    align-items: center; 
+}
+.header-logo-section .logo-link {
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
+    color: inherit; 
+}
+
+.header-logo-section .header-logo {
+    height: 70px; 
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px; 
+}
+
+.header-logo-section .logo-name {
+    color: #f0f0f0; 
+    font-size: 1.rem; 
+    font-weight: 700; 
+    margin: 0; 
+    text-transform: uppercase; 
+    white-space: nowrap; 
+}
+
+.header-menu-main {
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: center; 
+    margin: 0 20px;
+}
+
+.header-menu-main ul {
+    display: flex; 
+    gap: 30px; 
+}
+
+.header-menu-main a {
+    color: #f0f0f0; 
+    font-size: 1.1rem; 
+    font-weight: 500;
+    transition: color 0.3s ease; 
+    padding: 5px 0;
+    white-space: nowrap; 
+}
+
+.header-menu-main a:hover {
+    color: #6ee6a9; 
+}
+.header-menu-main .dropdown-arrow {
+    font-size: 0.7em; 
+    margin-left: 5px; 
+    vertical-align: middle; 
+}
+
+.header-menu-icons ul {
+    display: flex;
+    gap: 25px; 
+}
+
+.header-menu-icons a {
+    color: #f0f0f0; 
+    font-size: 1rem; 
+    transition: color 0.3s ease;
+    padding: 5px; 
+}
+
+.header-menu-icons a:hover {
+    color: #6ee6a9; 
+}
