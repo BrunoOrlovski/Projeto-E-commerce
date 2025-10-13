@@ -1,0 +1,66 @@
+/* 1. Container Principal (O "Cartão" que envolve tudo) */
+.policy-bar-container {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center; 
+    height: 50px;
+
+    /* Estilização do Contorno */
+    background-color: #f8f5f5; 
+    border-radius: 8px; 
+    padding: 15px 10px; 
+    margin: 20px auto; 
+    max-width: 1200px; 
+    border: solid 2px rgb(214, 214, 214);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+}
+
+.policy-item {
+    display: flex;
+    align-items: center; 
+    max-width: 25%; 
+    padding: 0 8px;
+}
+
+.policy-icon {
+    color: #444444; 
+    margin-right: 10px; 
+    min-width: 40px; 
+    height: 40px;
+}
+
+.policy-text {
+    color: #333333; 
+    font-size: 0.95rem; 
+    line-height: 1.2; 
+}
+
+.title-procurados {
+    margin-top: 30px;
+    text-align: left;
+    margin-left: 30px;
+    color: rgb(11, 11, 11);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.7rem;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  gap: 20px; /* Espaço entre os cards */
+  justify-content: center; /* Centraliza os cards */
+}
+
+@media (max-width: 768px) {
+    .policy-bar-container {
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 15px;
+    }
+
+    .policy-item {
+        width: 100%; 
+        max-width: 100%; 
+        margin-bottom: 10px; 
+    }
+}

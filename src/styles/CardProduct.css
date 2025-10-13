@@ -1,0 +1,80 @@
+/* src/componentes/ProductCard.css */
+
+.product-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  width: 250px; /* Largura fixa ou flexível, dependendo do layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-image-container {
+  position: relative; /* Necessário para posicionar as tags */
+  margin-bottom: 12px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-tags {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tag {
+  background-color: #e0f2e9; /* Um verde claro */
+  color: #007f00; /* Verde escuro */
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.product-name {
+  font-size: 16px;
+  color: #333;
+  margin: 8px 0;
+  min-height: 48px; /* Garante que os cards fiquem alinhados se o nome tiver 1, 2 ou 3 linhas */
+}
+
+.product-pricing {
+  margin: 12px 0;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.product-installments {
+  font-size: 12px;
+  color: #666;
+  margin: 4px 0 0;
+}
+
+.buy-button {
+  background-color: #8A84E2; /* Cor similar ao da imagem */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.buy-button:hover {
+  background-color: #7169d0; /* Um pouco mais escuro */
+}
