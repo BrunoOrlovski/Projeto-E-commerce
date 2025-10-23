@@ -1,5 +1,3 @@
-// src/components/PolicyBar.js
-
 import React from 'react';
 
 const PolicyBar = ({ policies }) => {

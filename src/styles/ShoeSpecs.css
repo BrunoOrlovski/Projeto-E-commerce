@@ -1,0 +1,80 @@
+.shoe-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  /* background-color: #d3d1d1; */
+  border-radius: 12px; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+  justify-content: center;
+  margin: 30px 30px 30px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  background-color: #e1dddd;
+  padding: 16px;
+  border-radius: 8px;
+  width: 180px;
+  height: 250px;
+  text-align: center;
+}
+
+.spec-item:hover {
+  background-color: #ececec;
+}
+
+.spec-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 12px; 
+
+}
+
+.spec-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.spec-label {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 4px;
+  
+}
+
+.spec-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #030303;
+}
+
+.product-description{
+    align-items: center;
+    width: 90%;
+    margin-left: 40px;
+}
+.product-description >h2 {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #0e0e0e;
+}
+.product-description> p {
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #0e0e0e;
+}
+.specifications-title {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #333;
+  margin-left: 30px;
+}
