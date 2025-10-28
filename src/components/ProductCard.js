@@ -8,34 +8,64 @@ function ProductCard({ product }) {
   if (!product) return null;
 
   const handleAddToCart = () => {
-    navigate("/Product");
+    const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const existingItem = storedCart.find(item => item.id === product.id);
+
+    let updatedCart;
+
+    if (existingItem) {
+      updatedCart = storedCart.map(item =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    } else {
+      const defaultSize = product.sizes && product.sizes.length > 0
+        ? product.sizes[0]
+        : null;
+
+      updatedCart = [...storedCart, {
+        ...product,
+        quantity: 1,
+        selectedSize: defaultSize
+      }];
+    }
+
+    try {
+      localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    } catch (e) {
+      console.error("Erro ao salvar no carrinho:", e);
+    }
+
+    alert("Produto adicionado ao carrinho!");
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
+    navigate(`/product/${product.id}`);
   };
 
   return (
     <div className="product-card">
-      {product.discount ? (
-        <p className="product-discount">{product.discount}</p>
-      ) : (
-        <p className="product-discount" style={{ visibility: "hidden" }}>
-          placeholder
+      {product.discount && (
+        <p className="product-discount">
+          {Math.round(product.discount * 100)}% OFF
         </p>
       )}
 
       <h3 className="product-name">{product.name}</h3>
 
-      <div className="product-image-container">
+      <div
+        className="product-image-container"
+        onClick={() => navigate(`/product/${product.id}`)}
+        style={{ cursor: "pointer" }}
+      >
         <img
           src={product.imageUrl}
           alt={product.name}
           className="product-image"
         />
-
         {product.tags && product.tags.length > 0 && (
           <div className="product-tags">
             {product.tags.map((tag) => (
-              <span key={tag} className="tag">
-                {tag}
-              </span>
+              <span key={tag} className="tag">{tag}</span>
             ))}
           </div>
         )}

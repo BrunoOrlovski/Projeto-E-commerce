@@ -12,7 +12,6 @@ const NewsletterSignup = () => {
       alert('Você precisa concordar com a Política de Privacidade.');
       return;
     }
-    // Aqui você pode integrar com backend ou serviço de email
     console.log('Cadastro enviado:', { name, email });
   };
 

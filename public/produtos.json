@@ -1,0 +1,143 @@
+[
+  {
+    "id": 1,
+    "name": "Fone de Ouvido",
+    "price": 99.90,
+    "imageUrl": "/img/fone1.png",
+    "tags": ["Lançamento"],
+    "originalPrice": 129.90,
+    "installments": "3x de R$ 33,30",
+    "sizes": ["Único"] 
+  },
+  {
+    "id": 2,
+    "name": "Smartwatch Ultra",
+    "price": 399.00,
+    "imageUrl": "/img/smartwatch1.jpg",
+    "discount": null,
+    "tags": [],
+    "originalPrice": null,
+    "installments": "10x de R$ 39,90",
+    "sizes": ["Único"] 
+  },
+  {
+    "id": 3,
+    "name": "Câmera Compacta Pro",
+    "price": 899.00,
+    "imageUrl": "/img/camera1.jpg",
+    "discount": null,
+    "tags": [],
+    "originalPrice": null,
+    "installments": "12x de R$ 74,92",
+    "sizes": ["N/A"] 
+  },
+  {
+    "id": 4,
+    "name": "Caixa de Som Portátil",
+    "price": 199.00,
+    "imageUrl": "/img/caixadesom1.jpg",
+    "discount": null,
+    "tags": [],
+    "originalPrice": null,
+    "installments": "5x de R$ 39,80",
+    "sizes": ["Pequeno"]
+  },
+  {
+    "id": 5,
+    "name": "Tênis Nike Zoom Fly 6",
+    "imageUrl": "/img/nike zoom.png",
+    "color":"branco",
+    "price": 199.99,
+    "originalPrice": null,
+    "discount": null,
+    "installments": "5x de R$ 39,99",
+    "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44]
+  },
+  {
+    "id": 6,
+    "name": "Tênis Corre Supra 2",
+    "imageUrl": "/img/corre supra.png",
+    "price": 299.99,
+    "originalPrice": null,
+    "discount": null,
+    "installments": "8x de R$ 37,49",
+    "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44] 
+  },
+  {
+    "id": 7,
+    "name": "Pochette Fitness Corrida",
+    "imageUrl": "/img/pochette.png",
+    "price": 199.99,
+    "originalPrice": null,
+    "discount": null,
+    "installments": "5x de R$ 39,99",
+    "tags": ["Mais Vendido"],
+    "sizes": ["P", "M", "G"] 
+  },
+  {
+    "id": 8,
+    "name": "Top Signature Samba 1",
+    "imageUrl": "/img/top.png",
+    "price": 199.99,
+    "originalPrice": null,
+    "discount": null,
+    "installments": "5x de R$ 39,99",
+    "tags": ["Mais Vendido"],
+    "sizes": ["PP", "P", "M", "G", "GG"] 
+  },
+  {
+  "id": 9,
+  "name": "Tênis Olympikus Corre 4",
+  "imageUrl": "/img/correazul1.png",
+  "price": 499.99,
+  "color": "azul",
+  "originalPrice": null,
+  "discount": 0.25,
+  "installments": "10x de R$ 49,99",
+  "sizes": [38, 39, 40, 41, 42, 43, 44],
+  "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
+  "thumbnails": [
+    "/img/correazul1.png",
+    "/img/correazul2.png",
+    "/img/correazul3.png",
+    "/img/correazul4.png",
+    "/img/correazu5.png",
+    "/img/correazul1.png"
+  ]
+  },
+  {
+    "id": 10,
+    "name": "Amazfit GTR 4 New",
+    "imageUrl": "/img/relogio.png",
+    "price": 1099.90,
+    "originalPrice": null,
+    "discount": null,
+    "installments": "10x de R$ 109,90",
+    "tags": ["Lançamento", "Frete Grátis","Mais Vendido"],
+    "sizes": ["Único"]
+  },
+  {
+    "id": 11,
+    "name": "Óculos de Sol Para Corrida",
+    "price": 199.99,
+    "imageUrl": "/img/oculos.png",
+    "originalPrice": null,
+    "discount": null,
+    "installments": "5x de R$ 39,99",
+    "tags": [],
+    "sizes": ["Único"]
+  },
+  {
+    "id": 12,
+    "name": "Horus Gel Frutas Vermelhas",
+    "price": 49.99,
+    "imageUrl": "/img/suplementos.png",
+    "originalPrice": null,
+    "discount": null,
+    "installments": null,
+    "tags": [],
+    "sizes": ["Único (20g)", "Único (30g)"] 
+  }
+]

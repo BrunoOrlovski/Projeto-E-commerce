@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Institucional</h4>
           <ul>
-            <li><a href="/sobre">Sobre Nós</a></li>
-            <li><a href="/contato">Contato</a></li>
-            <li><a href="/trabalhe">Trabalhe Conosco</a></li>
+            <li><a href="/">Sobre Nós</a></li>
+            <li><a href="/">Contato</a></li>
+            <li><a href="/">Trabalhe Conosco</a></li>
           </ul>
         </div>
 
@@ -43,13 +43,13 @@ const Footer = () => {
         </div>
 
         <div className="footer-social">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="/" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="/" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <a href="/" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-twitter"></i>
           </a>
         </div>

@@ -9,7 +9,8 @@ const ProductSection = ({ title, products }) => {
       <h2 className="section-title">{title}</h2>
       <div className="product-list">
         {products.map(product => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={`${product.id}-${product.name}`} product={product} />
+
         ))}
       </div>
     </section>

@@ -27,7 +27,6 @@ function CategoryGrid() {
       {categories.map((category, index) => (
         <div
           key={index}
-          // Note que removemos a classe dinâmica. Só 'category-card' agora.
           className="category-card"
           style={{ backgroundImage: `url(${category.imageUrl})` }}
         >

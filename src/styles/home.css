@@ -45,9 +45,9 @@
 
 .product-list {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-  gap: 20px; /* Espaço entre os cards */
-  justify-content: center; /* Centraliza os cards */
+  flex-wrap: wrap; 
+  gap: 20px; 
+  justify-content: center; 
 }
 
 @media (max-width: 768px) {

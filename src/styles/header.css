@@ -68,7 +68,7 @@
 }
 
 .header-menu-main a {
-    color: #f0f0f0; 
+    color: #ffffff; 
     font-size: 1.1rem; 
     font-weight: 500;
     transition: color 0.3s ease; 
@@ -91,7 +91,7 @@
 }
 
 .header-menu-icons a {
-    color: #f0f0f0; 
+    color: #f3f2f2; 
     font-size: 1rem; 
     transition: color 0.3s ease;
     padding: 5px; 
@@ -99,4 +99,79 @@
 
 .header-menu-icons a:hover {
     color: #6ee6a9; 
+}
+
+.dropdown-parent {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  margin-left: 6px;
+  font-size: 0.7rem;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(48, 47, 47);
+  display: flex;              
+  flex-direction: column;     
+  gap: 6px;                   
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 100px;
+}
+
+.dropdown li {
+  padding: 8px 16px;
+  white-space: nowrap;
+}
+
+.dropdown li:hover {
+  background-color: #6e6c6c;
+}
+.search-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon span {
+  cursor: pointer;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.search-icon span:hover {
+  color: #6ee6a9;
+}
+
+.search-input-wrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.search-input-wrapper.active {
+  transform: translateY(-50%) translateX(-10px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-input {
+  width: 180px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 0.9rem;
 }

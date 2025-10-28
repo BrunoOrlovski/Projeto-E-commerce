@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import '../styles/ProductDetails.css';
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function ProductDetails({ product }) {
   const [selectedSize, setSelectedSize] = useState(null);
+  const [mainImage, setMainImage] = useState(product.imageUrl);
   const [cep, setCep] = useState('');
   const navigate = useNavigate();
 
@@ -16,48 +17,91 @@ function ProductDetails({ product }) {
   };
 
   const handleBuy = () => {
-  if (!selectedSize) {
-    alert("Selecione um tamanho antes de comprar.");
-    return;
-  }
-  alert(`Comprando o produto no tamanho ${selectedSize}`);
+  const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const existingItem = storedCart.find(item => item.id === product.id);
+
+  const newItem = {
+    ...product,
+    quantity: 1,
+    selectedSize: selectedSize || product.sizes?.[0] || "Único",
+    color: product.color || null
+  };
+
+  const updatedCart = existingItem
+    ? storedCart.map(item =>
+    item.id === product.id
+      ? {
+          ...item,
+          quantity: item.quantity + 1,
+          selectedSize: selectedSize || item.selectedSize || product.sizes?.[0] || "Único",
+          color: product.color || item.color || null
+        }
+      : item
+  )
+    : [...storedCart, newItem];
+
+  localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  alert("Produto adicionado ao carrinho!");
   navigate("/ShoppCart");
 };
+
+
   return (
     <div className="product-details">
       <div className="gallery">
-        <img src={product.imageUrl} alt={product.name} className="main-image" />
+        <img
+          src={mainImage || "/img/placeholder.png"}
+          alt={product.name}
+          className="main-image"
+        />
+
         <div className="thumbnails">
-          {product.thumbnails.map((thumb, index) => (
-            <img key={index} src={thumb} alt={`thumb-${index}`} />
-          ))}
+          {(product.thumbnails || [])
+            .concat(Array(6).fill(null))
+            .map((thumb, index) => (
+              <div key={index} className="thumbnail-slot">
+                <img
+                  src={thumb || "/img/placeholder.png"}
+                  alt={`Thumbnail ${index + 1}`}
+                  className={`thumbnail ${mainImage === thumb ? 'active' : ''}`}
+                  onClick={() => thumb && setMainImage(thumb)}
+                  style={{ cursor: thumb ? 'pointer' : 'default' }}
+                />
+              </div>
+            ))}
         </div>
       </div>
 
       <div className="info">
         <h2>{product.name}</h2>
-        <p className="color">Cor: {product.color}</p>
-        <div className="rating">⭐ {product.rating}</div>
+        {product.color && <p className="color">Cor: {product.color}</p>}
+        {product.rating && <div className="rating">⭐ {product.rating}</div>}
 
         <div className="price">
-          <p className="value">R$ {product.price.toFixed(2).replace('.', ',')}</p>
-          <p className="installments">{product.installments}</p>
+          <p className="value">
+            R$ {product.price?.toFixed(2).replace('.', ',')}
+          </p>
+          {product.installments && (
+            <p className="installments">{product.installments}</p>
+          )}
         </div>
 
-        <div className="sizes">
-          <p>Tamanhos:</p>
-          <div className="size-options">
-            {product.sizes.map((size) => (
-              <button
-                key={size}
-                className={selectedSize === size ? 'selected' : ''}
-                onClick={() => handleSizeClick(size)}
-              >
-                {size}
-              </button>
-            ))}
+        {product.sizes?.length > 0 && (
+          <div className="sizes">
+            <p>Tamanhos:</p>
+            <div className="size-options">
+              {product.sizes.map((size) => (
+                <button
+                  key={size}
+                  className={selectedSize === size ? 'selected' : ''}
+                  onClick={() => handleSizeClick(size)}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <button className="buy-button" onClick={handleBuy}>
           COMPRAR AGORA
@@ -80,7 +124,6 @@ function ProductDetails({ product }) {
           />
           <button>CONSULTAR</button>
         </div>
-        
       </div>
     </div>
   );
