@@ -1,7 +1,7 @@
 .shoe-specs {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   padding: 10px;
   /* background-color: #d3d1d1; */
   border-radius: 12px; 

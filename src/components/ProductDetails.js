@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/ProductDetails.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,6 +7,12 @@ function ProductDetails({ product }) {
   const [mainImage, setMainImage] = useState(product.imageUrl);
   const [cep, setCep] = useState('');
   const navigate = useNavigate();
+
+
+  useEffect(() => {
+    setMainImage(product.imageUrl);
+    setSelectedSize(null);
+  }, [product]);
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
@@ -17,33 +23,33 @@ function ProductDetails({ product }) {
   };
 
   const handleBuy = () => {
-  const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-  const existingItem = storedCart.find(item => item.id === product.id);
+    const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const existingItem = storedCart.find(item => item.id === product.id);
 
-  const newItem = {
-    ...product,
-    quantity: 1,
-    selectedSize: selectedSize || product.sizes?.[0] || "Único",
-    color: product.color || null
+    const newItem = {
+      ...product,
+      quantity: 1,
+      selectedSize: selectedSize || product.sizes?.[0] || "Único",
+      color: product.color || null
+    };
+
+    const updatedCart = existingItem
+      ? storedCart.map(item =>
+        item.id === product.id
+          ? {
+            ...item,
+            quantity: item.quantity + 1,
+            selectedSize: selectedSize || item.selectedSize || product.sizes?.[0] || "Único",
+            color: product.color || item.color || null
+          }
+          : item
+      )
+      : [...storedCart, newItem];
+
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    alert("Produto adicionado ao carrinho!");
+    navigate("/ShoppCart");
   };
-
-  const updatedCart = existingItem
-    ? storedCart.map(item =>
-    item.id === product.id
-      ? {
-          ...item,
-          quantity: item.quantity + 1,
-          selectedSize: selectedSize || item.selectedSize || product.sizes?.[0] || "Único",
-          color: product.color || item.color || null
-        }
-      : item
-  )
-    : [...storedCart, newItem];
-
-  localStorage.setItem("cartItems", JSON.stringify(updatedCart));
-  alert("Produto adicionado ao carrinho!");
-  navigate("/ShoppCart");
-};
 
 
   return (
@@ -55,19 +61,20 @@ function ProductDetails({ product }) {
           className="main-image"
         />
 
+        {/* CORREÇÃO 2: JSX correto das thumbnails (sem 'thumbnail-slot') */}
         <div className="thumbnails">
           {(product.thumbnails || [])
             .concat(Array(6).fill(null))
+            .slice(0, 6)
             .map((thumb, index) => (
-              <div key={index} className="thumbnail-slot">
-                <img
-                  src={thumb || "/img/placeholder.png"}
-                  alt={`Thumbnail ${index + 1}`}
-                  className={`thumbnail ${mainImage === thumb ? 'active' : ''}`}
-                  onClick={() => thumb && setMainImage(thumb)}
-                  style={{ cursor: thumb ? 'pointer' : 'default' }}
-                />
-              </div>
+              <img
+                key={index}
+                src={thumb || "/img/placeholder.png"}
+                alt={`Thumbnail ${index + 1}`}
+                className={`thumbnail ${mainImage === thumb ? 'active' : ''} ${!thumb ? 'placeholder' : ''}`}
+                onClick={() => thumb && setMainImage(thumb)}
+                style={{ cursor: thumb ? 'pointer' : 'default' }}
+              />
             ))}
         </div>
       </div>

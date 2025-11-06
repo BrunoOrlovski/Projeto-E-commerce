@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MultiStepRegisterForm({ 
+function RegisterForm({ 
     currentStep, 
     formData, 
     errors, 
@@ -109,4 +109,4 @@ function MultiStepRegisterForm({
   return renderCurrentStep();
 }
 
-export default MultiStepRegisterForm;
+export default RegisterForm;

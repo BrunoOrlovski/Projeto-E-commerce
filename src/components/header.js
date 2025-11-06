@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass,faUser,faShoppingCart,faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import {
+  faMagnifyingGlass,
+  faUser,
+  faShoppingCart,
+  faChevronDown,
+  faBars,
+  faTimes
+} from '@fortawesome/free-solid-svg-icons';
 import '../styles/header.css';
 
 const logoPath = "/img/Logo sem fundo.png";
@@ -9,15 +16,28 @@ const logoPath = "/img/Logo sem fundo.png";
 function Header() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [showSearchInput, setShowSearchInput] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuRef = useRef(null);
   const searchRef = useRef(null);
+  const hamburgerRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+     
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setActiveMenu(null);
       }
+     
+      if (
+        isMenuOpen && 
+        menuRef.current && !menuRef.current.contains(event.target) &&
+        hamburgerRef.current && !hamburgerRef.current.contains(event.target) &&
+        !event.target.closest('.dropdown-parent') 
+      ) {
+        setIsMenuOpen(false);
+      }
+   
       if (searchRef.current && !searchRef.current.contains(event.target)) {
         setShowSearchInput(false);
       }
@@ -27,22 +47,28 @@ function Header() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isMenuOpen]); 
 
   const toggleMenu = (menuName) => {
-  setActiveMenu(prev => {
-    const newState = (prev === menuName ? null : menuName); 
-    console.log('Active menu toggled to:', newState); 
-    return newState; 
-     });
+    setActiveMenu(prev => (prev === menuName ? null : menuName));
   };
 
-const toggleSearchInput = () => {
-  setShowSearchInput(prev => !prev);
-};
+  const toggleSearchInput = () => {
+    setShowSearchInput(prev => !prev);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMenuOpen(prev => !prev);
+    setActiveMenu(null); 
+  };
+
+  const handleLinkClick = () => {
+    setActiveMenu(null);
+    setIsMenuOpen(false);
+  };
 
   return (
-    <nav className="header-nav">
+    <nav className={`header-nav ${isMenuOpen ? 'menu-active' : ''}`}>
       <div className="header-logo-section">
         <Link to='/' className='logo-link'>
           <img src={logoPath} alt="Logo Ritmo Urbano" className="header-logo" />
@@ -66,33 +92,67 @@ const toggleSearchInput = () => {
               {activeMenu === key && (
                 <ul className="dropdown">
                   {links.map((link, i) => (
-                    <li key={link}><Link to={link}>{labels[i]}</Link></li>
+                    <li key={link}><Link to={link} onClick={handleLinkClick}>{labels[i]}</Link></li>
                   ))}
                 </ul>
               )}
             </li>
           ))}
         </ul>
+        <div className="header-menu-icons mobile-only"> 
+          <ul>
+            <li className="search-icon" ref={searchRef}>
+              <span onClick={toggleSearchInput}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                {showSearchInput && ( 
+                  <div className="search-input-wrapper active">
+                    <input
+                      type="text"
+                      placeholder="Digite sua busca..."
+                      className="search-input"
+                      onClick={(e) => e.stopPropagation()} 
+                    />
+                  </div>
+                )}
+              </span>
+            </li>
+
+            <li className="dropdown-parent">
+              <span onClick={() => toggleMenu("login")} className="user-dropdown-trigger">
+                <FontAwesomeIcon icon={faUser} />
+                <FontAwesomeIcon icon={faChevronDown} className="dropdown-arrow" />
+              </span>
+              {activeMenu === "login" && (
+                <ul className="dropdown">
+                  <li><Link to="/login" onClick={handleLinkClick}>Efetuar Login</Link></li>
+                  <li><Link to="/login" onClick={handleLinkClick}>Cadastrar-se</Link></li>
+                </ul>
+              )}
+            </li>
+
+            <li><Link to="/ShoppCart" onClick={handleLinkClick}><FontAwesomeIcon icon={faShoppingCart} /></Link></li>
+          </ul>
+        </div>
       </div>
 
-      <div className="header-menu-icons">
+      <div className="header-menu-icons desktop-only"> 
         <ul>
-        <li className="search-icon" ref={searchRef}>
-        {!showSearchInput && (
-            <span onClick={toggleSearchInput}>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </span>
-        )}
-        {showSearchInput && (
-            <div className="search-input-wrapper active">
-            <input
-                type="text"
-                placeholder="Digite sua busca..."
-                className="search-input"
-            />
-            </div>
-        )}
-        </li>
+          <li className="search-icon" ref={searchRef}>
+            {!showSearchInput && (
+              <span onClick={toggleSearchInput}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </span>
+            )}
+            {showSearchInput && (
+              <div className="search-input-wrapper active">
+                <input
+                  type="text"
+                  placeholder="Digite sua busca..."
+                  className="search-input"
+                />
+              </div>
+            )}
+          </li>
 
           <li className="dropdown-parent">
             <span onClick={() => toggleMenu("login")} className="user-dropdown-trigger">
@@ -101,8 +161,8 @@ const toggleSearchInput = () => {
             </span>
             {activeMenu === "login" && (
               <ul className="dropdown">
-                <li><Link to="/login" onClick={() => setActiveMenu(null)}>Efetuar Login</Link></li>
-                <li><Link to="/login" onClick={() => setActiveMenu(null)}>Cadastrar-se</Link></li>
+                <li><Link to="/login" onClick={handleLinkClick}>Efetuar Login</Link></li>
+                <li><Link to="/login" onClick={handleLinkClick}>Cadastrar-se</Link></li>
               </ul>
             )}
           </li>
@@ -110,6 +170,14 @@ const toggleSearchInput = () => {
           <li><Link to="/ShoppCart"><FontAwesomeIcon icon={faShoppingCart} /></Link></li>
         </ul>
       </div>
+
+      <button
+        className="hamburger-menu"
+        onClick={toggleMobileMenu}
+        ref={hamburgerRef}
+      >
+        {isMenuOpen ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
+      </button>
     </nav>
   );
 }

@@ -9,7 +9,7 @@
     border-radius: 8px; 
     padding: 15px 10px; 
     margin: 20px auto; 
-    max-width: 80; 
+    max-width: 1200px; 
     border: solid 2px rgb(214, 214, 214);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
 }
@@ -33,15 +33,7 @@
     font-size: 0.95rem; 
     line-height: 1.2; 
 }
-/* 
-.title-procurados {
-    margin-top: 60px;
-    text-align: left;
-    margin-left: 165px;
-    color: rgb(11, 11, 11);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 0.7rem;
-} */
+
 
 .product-list {
   display: flex;
@@ -55,6 +47,7 @@
         flex-direction: column; 
         align-items: flex-start; 
         padding: 15px;
+        height: auto;
     }
 
     .policy-item {

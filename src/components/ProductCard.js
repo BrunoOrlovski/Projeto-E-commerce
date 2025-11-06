@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/CardProduct.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Removido 'Link'
 
 function ProductCard({ product }) {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ function ProductCard({ product }) {
 
     alert("Produto adicionado ao carrinho!");
     window.dispatchEvent(new CustomEvent('cartUpdated'));
-    navigate(`/product/${product.id}`);
+    // REMOVIDA: A linha navigate(...) foi removida daqui
   };
 
   return (
@@ -52,6 +52,7 @@ function ProductCard({ product }) {
 
       <h3 className="product-name">{product.name}</h3>
 
+      {/* A navegação continua aqui no onClick da imagem */}
       <div
         className="product-image-container"
         onClick={() => navigate(`/product/${product.id}`)}

@@ -7,7 +7,9 @@
     "tags": ["Lançamento"],
     "originalPrice": 129.90,
     "installments": "3x de R$ 33,30",
-    "sizes": ["Único"] 
+    "sizes": ["Único"],
+    "description": "Descrição de exemplo para o Fone de Ouvido. Ótima qualidade de som e conforto.",
+    "specifications": null
   },
   {
     "id": 2,
@@ -18,7 +20,9 @@
     "tags": [],
     "originalPrice": null,
     "installments": "10x de R$ 39,90",
-    "sizes": ["Único"] 
+    "sizes": ["Único"],
+    "description": "Descrição de exemplo para o Smartwatch Ultra. Monitore sua saúde e atividades.",
+    "specifications": null
   },
   {
     "id": 3,
@@ -29,7 +33,9 @@
     "tags": [],
     "originalPrice": null,
     "installments": "12x de R$ 74,92",
-    "sizes": ["N/A"] 
+    "sizes": ["N/A"],
+    "description": "Descrição de exemplo para a Câmera Compacta Pro. Capture momentos inesquecíveis.",
+    "specifications": null
   },
   {
     "id": 4,
@@ -40,19 +46,30 @@
     "tags": [],
     "originalPrice": null,
     "installments": "5x de R$ 39,80",
-    "sizes": ["Pequeno"]
+    "sizes": ["Pequeno"],
+    "description": "Descrição de exemplo para a Caixa de Som Portátil. Leve sua música para qualquer lugar.",
+    "specifications": null
   },
   {
     "id": 5,
     "name": "Tênis Nike Zoom Fly 6",
     "imageUrl": "/img/nike zoom.png",
-    "color":"branco",
+    "color": "branco",
     "price": 199.99,
     "originalPrice": null,
     "discount": null,
     "installments": "5x de R$ 39,99",
     "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
-    "sizes": [38, 39, 40, 41, 42, 43, 44]
+    "sizes": [38, 39, 40, 41, 42, 43, 44],
+    "description": "Descrição de exemplo para o Tênis Nike Zoom Fly 6. Ideal para performance e estilo.",
+    "specifications": [
+      { "type": "indicado", "value": "Corrida" },
+      { "type": "pisada", "value": "Neutra" },
+      { "type": "distancia", "value": "21 km" },
+      { "type": "tecnologia", "value": "Zoom Air" },
+      { "type": "drop", "value": "10 mm" },
+      { "type": "peso", "value": "250g" }
+    ]
   },
   {
     "id": 6,
@@ -63,7 +80,16 @@
     "discount": null,
     "installments": "8x de R$ 37,49",
     "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
-    "sizes": [38, 39, 40, 41, 42, 43, 44] 
+    "sizes": [38, 39, 40, 41, 42, 43, 44],
+    "description": "Descrição de exemplo para o Tênis Corre Supra 2. Conforto e velocidade para suas corridas.",
+    "specifications": [
+      { "type": "indicado", "value": "Corrida" },
+      { "type": "pisada", "value": "Neutra" },
+      { "type": "distancia", "value": "10 km" },
+      { "type": "tecnologia", "value": "SupraFoam" },
+      { "type": "drop", "value": "8 mm" },
+      { "type": "peso", "value": "240g" }
+    ]
   },
   {
     "id": 7,
@@ -74,7 +100,9 @@
     "discount": null,
     "installments": "5x de R$ 39,99",
     "tags": ["Mais Vendido"],
-    "sizes": ["P", "M", "G"] 
+    "sizes": ["P", "M", "G"],
+    "description": "Descrição de exemplo para a Pochette Fitness. Leve seus itens essenciais com segurança.",
+    "specifications": null
   },
   {
     "id": 8,
@@ -85,27 +113,38 @@
     "discount": null,
     "installments": "5x de R$ 39,99",
     "tags": ["Mais Vendido"],
-    "sizes": ["PP", "P", "M", "G", "GG"] 
+    "sizes": ["PP", "P", "M", "G", "GG"],
+    "description": "Descrição de exemplo para o Top Signature Samba 1. Suporte e estilo para seus treinos.",
+    "specifications": null
   },
   {
-  "id": 9,
-  "name": "Tênis Olympikus Corre 4",
-  "imageUrl": "/img/correazul1.png",
-  "price": 499.99,
-  "color": "azul",
-  "originalPrice": null,
-  "discount": 0.25,
-  "installments": "10x de R$ 49,99",
-  "sizes": [38, 39, 40, 41, 42, 43, 44],
-  "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
-  "thumbnails": [
-    "/img/correazul1.png",
-    "/img/correazul2.png",
-    "/img/correazul3.png",
-    "/img/correazul4.png",
-    "/img/correazu5.png",
-    "/img/correazul1.png"
-  ]
+    "id": 9,
+    "name": "Tênis Olympikus Corre 4",
+    "imageUrl": "/img/correazul1.png",
+    "price": 499.99,
+    "color": "azul",
+    "originalPrice": null,
+    "discount": 0.25,
+    "installments": "10x de R$ 49,99",
+    "sizes": [38, 39, 40, 41, 42, 43, 44],
+    "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
+    "thumbnails": [
+      "/img/correazul1.png",
+      "/img/correazul2.png",
+      "/img/correazul3.png",
+      "/img/correazul4.png",
+      "/img/correazu5.png",
+      "/img/correazul1.png"
+    ],
+    "description": "Adquira o Tênis Olympikus Corre 4 e leve sua performance ao próximo nível! Com tecnologia Eleva Pro 2.0 na entressola, esse modelo oferece amortecimento muito macio, ideal para corridas de rua e distâncias longas. O peso aproximado é de 260g, garantindo leveza e agilidade. A tecnologia Oxitec 2.0 proporciona um excelente ajuste, enquanto a borracha Gripper na sola oferece alta aderência ao terreno. Para pisadas neutras, o Corre 4 é ideal para maratonistas, atingindo uma média de 4-5 km por minuto. Com foco na sustentabilidade, cerca de 30% do material é reciclado. Não perca essa oportunidade e opere seus treinos agora mesmo! Compre já e alcance seus objetivos!",
+    "specifications": [
+      { "type": "indicado", "value": "Corrida" },
+      { "type": "pisada", "value": "Neutra" },
+      { "type": "distancia", "value": "21 km" },
+      { "type": "tecnologia", "value": "Gripper, ELEVA" },
+      { "type": "drop", "value": "8 mm" },
+      { "type": "peso", "value": "230g" }
+    ]
   },
   {
     "id": 10,
@@ -115,8 +154,10 @@
     "originalPrice": null,
     "discount": null,
     "installments": "10x de R$ 109,90",
-    "tags": ["Lançamento", "Frete Grátis","Mais Vendido"],
-    "sizes": ["Único"]
+    "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
+    "sizes": ["Único"],
+    "description": "Descrição de exemplo para o Amazfit GTR 4 New. Bateria de longa duração e GPS preciso.",
+    "specifications": null
   },
   {
     "id": 11,
@@ -127,17 +168,21 @@
     "discount": null,
     "installments": "5x de R$ 39,99",
     "tags": [],
-    "sizes": ["Único"]
+    "sizes": ["Único"],
+    "description": "Descrição de exemplo para Óculos de Sol. Proteção e conforto para suas corridas.",
+    "specifications": null
   },
   {
-    "id": 12,
-    "name": "Horus Gel Frutas Vermelhas",
-    "price": 49.99,
-    "imageUrl": "/img/suplementos.png",
-    "originalPrice": null,
-    "discount": null,
-    "installments": null,
-    "tags": [],
-    "sizes": ["Único (20g)", "Único (30g)"] 
-  }
+  "id": 12,
+  "name": "Horus Gel Frutas Vermelhas",
+  "price": 49.99,
+  "imageUrl": "/img/suplementos.png",
+  "originalPrice": null,
+  "discount": null,
+  "installments": null,
+  "tags": [],
+  "sizes": ["Único (20g)", "Único (30g)"],
+  "description": "Descrição de exemplo para o Horus Gel. Energia rápida para seus treinos mais intensos.",
+  "specifications": null
+}
 ]

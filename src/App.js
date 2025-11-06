@@ -8,10 +8,13 @@ import Product from './pages/Product';
 import ShoppCart from './pages/ShoppCart';
 import LoginPage from './pages/LoginPage'; 
 import RegisterPage from './pages/RegisterPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
+
     <Router> 
+      <ScrollToTop />
       <div className="App">
         <Header/>
         
