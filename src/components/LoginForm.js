@@ -53,7 +53,7 @@ function LoginForm({ onLoginSuccess }) {
     <div className="auth-form">
       <h2>Login</h2>
       {errors.geral && <p className="error-message">{errors.geral}</p>}
-      <form onSubmit={handleSubmit} noValidate> {/* noValidate desabilita a validação HTML5 padrão */}
+      <form onSubmit={handleSubmit} noValidate> 
         <div>
           <label htmlFor="email">E-mail:</label>
           <input

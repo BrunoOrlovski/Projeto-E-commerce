@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMagnifyingGlass,
   faUser,
@@ -9,6 +8,7 @@ import {
   faBars,
   faTimes
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import '../styles/header.css';
 
 const logoPath = "/img/Logo sem fundo.png";
@@ -18,17 +18,44 @@ function Header() {
   const [showSearchInput, setShowSearchInput] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [itemCount, setItemCount] = useState(0);
+
   const menuRef = useRef(null);
   const searchRef = useRef(null);
   const hamburgerRef = useRef(null);
 
+ 
+  const updateCartCount = () => {
+    try {
+      const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const totalCount = storedCart.reduce((acc, item) => acc + item.quantity, 0);
+      setItemCount(totalCount);
+    } catch (error) {
+      console.error("Erro ao ler o carrinho do localStorage:", error);
+      setItemCount(0); 
+    }
+  };
+
+  useEffect(() => {
+    updateCartCount();
+
+    window.addEventListener('cartUpdated', updateCartCount);
+
+    window.addEventListener('storage', updateCartCount);
+
+    return () => {
+      window.removeEventListener('cartUpdated', updateCartCount);
+      window.removeEventListener('storage', updateCartCount);
+    };
+  }, []); 
+
+
   useEffect(() => {
     const handleClickOutside = (event) => {
-     
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setActiveMenu(null);
       }
-     
+      
       if (
         isMenuOpen && 
         menuRef.current && !menuRef.current.contains(event.target) &&
@@ -37,17 +64,18 @@ function Header() {
       ) {
         setIsMenuOpen(false);
       }
-   
+    
       if (searchRef.current && !searchRef.current.contains(event.target)) {
         setShowSearchInput(false);
       }
+      
     };
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isMenuOpen]); 
+  }, [isMenuOpen, activeMenu]); 
 
   const toggleMenu = (menuName) => {
     setActiveMenu(prev => (prev === menuName ? null : menuName));
@@ -64,7 +92,7 @@ function Header() {
 
   const handleLinkClick = () => {
     setActiveMenu(null);
-    setIsMenuOpen(false);
+    setIsMenuOpen(false); 
   };
 
   return (
@@ -99,6 +127,7 @@ function Header() {
             </li>
           ))}
         </ul>
+
         <div className="header-menu-icons mobile-only"> 
           <ul>
             <li className="search-icon" ref={searchRef}>
@@ -130,7 +159,14 @@ function Header() {
               )}
             </li>
 
-            <li><Link to="/ShoppCart" onClick={handleLinkClick}><FontAwesomeIcon icon={faShoppingCart} /></Link></li>
+            <li className="cart-icon-wrapper">
+              <Link to="/ShoppCart" onClick={handleLinkClick}>
+                <FontAwesomeIcon icon={faShoppingCart} />
+                {itemCount > 0 && (
+                  <span className="cart-counter">{itemCount}</span>
+                )}
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -149,6 +185,7 @@ function Header() {
                   type="text"
                   placeholder="Digite sua busca..."
                   className="search-input"
+                  onClick={(e) => e.stopPropagation()} 
                 />
               </div>
             )}
@@ -167,7 +204,14 @@ function Header() {
             )}
           </li>
 
-          <li><Link to="/ShoppCart"><FontAwesomeIcon icon={faShoppingCart} /></Link></li>
+          <li className="cart-icon-wrapper">
+            <Link to="/ShoppCart"> 
+              <FontAwesomeIcon icon={faShoppingCart} />
+              {itemCount > 0 && (
+                <span className="cart-counter">{itemCount}</span>
+              )}
+            </Link>
+          </li>
         </ul>
       </div>
 

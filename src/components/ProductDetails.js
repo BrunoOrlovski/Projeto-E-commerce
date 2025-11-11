@@ -49,6 +49,7 @@ function ProductDetails({ product }) {
     localStorage.setItem("cartItems", JSON.stringify(updatedCart));
     alert("Produto adicionado ao carrinho!");
     navigate("/ShoppCart");
+     window.dispatchEvent(new CustomEvent('cartUpdated'));
   };
 
 
@@ -60,8 +61,7 @@ function ProductDetails({ product }) {
           alt={product.name}
           className="main-image"
         />
-
-        {/* CORREÇÃO 2: JSX correto das thumbnails (sem 'thumbnail-slot') */}
+        
         <div className="thumbnails">
           {(product.thumbnails || [])
             .concat(Array(6).fill(null))

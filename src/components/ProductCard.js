@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/CardProduct.css";
-import { useNavigate } from "react-router-dom"; // Removido 'Link'
+import { useNavigate } from "react-router-dom"; 
+import { toast } from "react-toastify";
 
 function ProductCard({ product }) {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ function ProductCard({ product }) {
     const existingItem = storedCart.find(item => item.id === product.id);
 
     let updatedCart;
+    let isNewItem = false; 
 
     if (existingItem) {
       updatedCart = storedCart.map(item =>
@@ -19,6 +21,7 @@ function ProductCard({ product }) {
           ? { ...item, quantity: item.quantity + 1 }
           : item
       );
+      isNewItem = false;
     } else {
       const defaultSize = product.sizes && product.sizes.length > 0
         ? product.sizes[0]
@@ -29,17 +32,27 @@ function ProductCard({ product }) {
         quantity: 1,
         selectedSize: defaultSize
       }];
+      isNewItem = true;
     }
 
     try {
+      
       localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+      window.dispatchEvent(new CustomEvent('cartUpdated'));
+      
+      if (isNewItem) {
+        toast.success("Produto adicionado ao carrinho!");
+      } else {
+        toast.info("Quantidade Atualizada!");
+      }
+
     } catch (e) {
       console.error("Erro ao salvar no carrinho:", e);
+      toast.error("Erro ao adicionar o produto.");
     }
-
-    alert("Produto adicionado ao carrinho!");
-    window.dispatchEvent(new CustomEvent('cartUpdated'));
-    // REMOVIDA: A linha navigate(...) foi removida daqui
+    
+    /* toast.success("Produto adicionado ao carrinho!");
+     window.dispatchEvent(new CustomEvent('cartUpdated')); */
   };
 
   return (
@@ -52,7 +65,6 @@ function ProductCard({ product }) {
 
       <h3 className="product-name">{product.name}</h3>
 
-      {/* A navegação continua aqui no onClick da imagem */}
       <div
         className="product-image-container"
         onClick={() => navigate(`/product/${product.id}`)}
