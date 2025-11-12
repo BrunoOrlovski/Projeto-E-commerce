@@ -8,7 +8,6 @@ function ProductDetails({ product }) {
   const [cep, setCep] = useState('');
   const navigate = useNavigate();
 
-
   useEffect(() => {
     setMainImage(product.imageUrl);
     setSelectedSize(null);
@@ -23,35 +22,41 @@ function ProductDetails({ product }) {
   };
 
   const handleBuy = () => {
+    
+
+    if (product.sizes?.length > 0 && !selectedSize) {
+      alert("Por favor, selecione um tamanho para continuar.");
+      return; 
+    }
+
     const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
     const existingItem = storedCart.find(item => item.id === product.id);
 
     const newItem = {
       ...product,
       quantity: 1,
-      selectedSize: selectedSize || product.sizes?.[0] || "Único",
+      selectedSize: selectedSize || "Único",
       color: product.color || null
     };
 
     const updatedCart = existingItem
       ? storedCart.map(item =>
-        item.id === product.id
-          ? {
-            ...item,
-            quantity: item.quantity + 1,
-            selectedSize: selectedSize || item.selectedSize || product.sizes?.[0] || "Único",
-            color: product.color || item.color || null
-          }
-          : item
-      )
+          item.id === product.id
+            ? {
+                ...item,
+                quantity: item.quantity + 1,
+                selectedSize: selectedSize || item.selectedSize || "Único",
+                color: product.color || item.color || null
+              }
+            : item
+        )
       : [...storedCart, newItem];
 
     localStorage.setItem("cartItems", JSON.stringify(updatedCart));
     alert("Produto adicionado ao carrinho!");
     navigate("/ShoppCart");
-     window.dispatchEvent(new CustomEvent('cartUpdated'));
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
   };
-
 
   return (
     <div className="product-details">

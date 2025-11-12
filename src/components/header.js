@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react'; 
 import { Link } from 'react-router-dom';
 import {
   faMagnifyingGlass,
@@ -10,90 +10,27 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import '../styles/header.css';
+import { useHeader} from '../Hooks/useHeader';
 
 const logoPath = "/img/Logo sem fundo.png";
 
 function Header() {
-  const [activeMenu, setActiveMenu] = useState(null);
-  const [showSearchInput, setShowSearchInput] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [itemCount, setItemCount] = useState(0);
-
-  const menuRef = useRef(null);
-  const searchRef = useRef(null);
-  const hamburgerRef = useRef(null);
-
- 
-  const updateCartCount = () => {
-    try {
-      const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-      const totalCount = storedCart.reduce((acc, item) => acc + item.quantity, 0);
-      setItemCount(totalCount);
-    } catch (error) {
-      console.error("Erro ao ler o carrinho do localStorage:", error);
-      setItemCount(0); 
-    }
-  };
-
-  useEffect(() => {
-    updateCartCount();
-
-    window.addEventListener('cartUpdated', updateCartCount);
-
-    window.addEventListener('storage', updateCartCount);
-
-    return () => {
-      window.removeEventListener('cartUpdated', updateCartCount);
-      window.removeEventListener('storage', updateCartCount);
-    };
-  }, []); 
-
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setActiveMenu(null);
-      }
-      
-      if (
-        isMenuOpen && 
-        menuRef.current && !menuRef.current.contains(event.target) &&
-        hamburgerRef.current && !hamburgerRef.current.contains(event.target) &&
-        !event.target.closest('.dropdown-parent') 
-      ) {
-        setIsMenuOpen(false);
-      }
-    
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
-        setShowSearchInput(false);
-      }
-      
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isMenuOpen, activeMenu]); 
-
-  const toggleMenu = (menuName) => {
-    setActiveMenu(prev => (prev === menuName ? null : menuName));
-  };
-
-  const toggleSearchInput = () => {
-    setShowSearchInput(prev => !prev);
-  };
-
-  const toggleMobileMenu = () => {
-    setIsMenuOpen(prev => !prev);
-    setActiveMenu(null); 
-  };
-
-  const handleLinkClick = () => {
-    setActiveMenu(null);
-    setIsMenuOpen(false); 
-  };
+  const {
+    activeMenu,
+    showSearchInput,
+    isMenuOpen,
+    itemCount,
+    menuRef,
+    hamburgerRef,
+    mobileSearchRef,
+    desktopSearchRef,
+    desktopIconsRef,
+    toggleMenu,
+    toggleSearchInput,
+    toggleMobileMenu,
+    handleLinkClick
+  } = useHeader();
 
   return (
     <nav className={`header-nav ${isMenuOpen ? 'menu-active' : ''}`}>
@@ -130,7 +67,7 @@ function Header() {
 
         <div className="header-menu-icons mobile-only"> 
           <ul>
-            <li className="search-icon" ref={searchRef}>
+            <li className="search-icon" ref={mobileSearchRef}> 
               <span onClick={toggleSearchInput}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                 {showSearchInput && ( 
@@ -145,7 +82,6 @@ function Header() {
                 )}
               </span>
             </li>
-
             <li className="dropdown-parent">
               <span onClick={() => toggleMenu("login")} className="user-dropdown-trigger">
                 <FontAwesomeIcon icon={faUser} />
@@ -158,7 +94,6 @@ function Header() {
                 </ul>
               )}
             </li>
-
             <li className="cart-icon-wrapper">
               <Link to="/ShoppCart" onClick={handleLinkClick}>
                 <FontAwesomeIcon icon={faShoppingCart} />
@@ -171,9 +106,9 @@ function Header() {
         </div>
       </div>
 
-      <div className="header-menu-icons desktop-only"> 
+      <div className="header-menu-icons desktop-only" ref={desktopIconsRef}> 
         <ul>
-          <li className="search-icon" ref={searchRef}>
+          <li className="search-icon" ref={desktopSearchRef}>
             {!showSearchInput && (
               <span onClick={toggleSearchInput}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -190,7 +125,6 @@ function Header() {
               </div>
             )}
           </li>
-
           <li className="dropdown-parent">
             <span onClick={() => toggleMenu("login")} className="user-dropdown-trigger">
               <FontAwesomeIcon icon={faUser} />
@@ -203,7 +137,6 @@ function Header() {
               </ul>
             )}
           </li>
-
           <li className="cart-icon-wrapper">
             <Link to="/ShoppCart"> 
               <FontAwesomeIcon icon={faShoppingCart} />

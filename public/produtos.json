@@ -9,7 +9,8 @@
     "installments": "3x de R$ 33,30",
     "sizes": ["Único"],
     "description": "Descrição de exemplo para o Fone de Ouvido. Ótima qualidade de som e conforto.",
-    "specifications": null
+    "specifications": null,
+    "category": "Eletrônicos"
   },
   {
     "id": 2,
@@ -22,7 +23,8 @@
     "installments": "10x de R$ 39,90",
     "sizes": ["Único"],
     "description": "Descrição de exemplo para o Smartwatch Ultra. Monitore sua saúde e atividades.",
-    "specifications": null
+    "specifications": null,
+    "category": "Eletrônicos"
   },
   {
     "id": 3,
@@ -35,7 +37,8 @@
     "installments": "12x de R$ 74,92",
     "sizes": ["N/A"],
     "description": "Descrição de exemplo para a Câmera Compacta Pro. Capture momentos inesquecíveis.",
-    "specifications": null
+    "specifications": null,
+    "category": "Eletrônicos"
   },
   {
     "id": 4,
@@ -48,7 +51,8 @@
     "installments": "5x de R$ 39,80",
     "sizes": ["Pequeno"],
     "description": "Descrição de exemplo para a Caixa de Som Portátil. Leve sua música para qualquer lugar.",
-    "specifications": null
+    "specifications": null,
+    "category": "Eletrônicos"
   },
   {
     "id": 5,
@@ -69,7 +73,8 @@
       { "type": "tecnologia", "value": "Zoom Air" },
       { "type": "drop", "value": "10 mm" },
       { "type": "peso", "value": "250g" }
-    ]
+    ],
+    "category": "Calçados"
   },
   {
     "id": 6,
@@ -89,7 +94,8 @@
       { "type": "tecnologia", "value": "SupraFoam" },
       { "type": "drop", "value": "8 mm" },
       { "type": "peso", "value": "240g" }
-    ]
+    ],
+    "category": "Calçados"
   },
   {
     "id": 7,
@@ -102,7 +108,8 @@
     "tags": ["Mais Vendido"],
     "sizes": ["P", "M", "G"],
     "description": "Descrição de exemplo para a Pochette Fitness. Leve seus itens essenciais com segurança.",
-    "specifications": null
+    "specifications": null,
+    "category": "Acessórios"
   },
   {
     "id": 8,
@@ -115,7 +122,8 @@
     "tags": ["Mais Vendido"],
     "sizes": ["PP", "P", "M", "G", "GG"],
     "description": "Descrição de exemplo para o Top Signature Samba 1. Suporte e estilo para seus treinos.",
-    "specifications": null
+    "specifications": null,
+    "category": "Vestuário"
   },
   {
     "id": 9,
@@ -136,7 +144,7 @@
       "/img/correazu5.png",
       "/img/correazul1.png"
     ],
-    "description": "Adquira o Tênis Olympikus Corre 4 e leve sua performance ao próximo nível! Com tecnologia Eleva Pro 2.0 na entressola, esse modelo oferece amortecimento muito macio, ideal para corridas de rua e distâncias longas. O peso aproximado é de 260g, garantindo leveza e agilidade. A tecnologia Oxitec 2.0 proporciona um excelente ajuste, enquanto a borracha Gripper na sola oferece alta aderência ao terreno. Para pisadas neutras, o Corre 4 é ideal para maratonistas, atingindo uma média de 4-5 km por minuto. Com foco na sustentabilidade, cerca de 30% do material é reciclado. Não perca essa oportunidade e opere seus treinos agora mesmo! Compre já e alcance seus objetivos!",
+    "description": "Adquira o Tênis Olympikus Corre 4 e leve sua performance ao próximo nível! ...",
     "specifications": [
       { "type": "indicado", "value": "Corrida" },
       { "type": "pisada", "value": "Neutra" },
@@ -144,7 +152,8 @@
       { "type": "tecnologia", "value": "Gripper, ELEVA" },
       { "type": "drop", "value": "8 mm" },
       { "type": "peso", "value": "230g" }
-    ]
+    ],
+    "category": "Calçados"
   },
   {
     "id": 10,
@@ -157,7 +166,8 @@
     "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
     "sizes": ["Único"],
     "description": "Descrição de exemplo para o Amazfit GTR 4 New. Bateria de longa duração e GPS preciso.",
-    "specifications": null
+    "specifications": null,
+    "category": "Eletrônicos"
   },
   {
     "id": 11,
@@ -170,19 +180,110 @@
     "tags": [],
     "sizes": ["Único"],
     "description": "Descrição de exemplo para Óculos de Sol. Proteção e conforto para suas corridas.",
-    "specifications": null
+    "specifications": null,
+    "category": "Acessórios"
   },
   {
-  "id": 12,
-  "name": "Horus Gel Frutas Vermelhas",
-  "price": 49.99,
-  "imageUrl": "/img/suplementos.png",
-  "originalPrice": null,
-  "discount": null,
-  "installments": null,
-  "tags": [],
-  "sizes": ["Único (20g)", "Único (30g)"],
-  "description": "Descrição de exemplo para o Horus Gel. Energia rápida para seus treinos mais intensos.",
-  "specifications": null
-}
+    "id": 12,
+    "name": "Horus Gel Frutas Vermelhas",
+    "price": 49.99,
+    "imageUrl": "/img/suplementos.png",
+    "originalPrice": null,
+    "discount": null,
+    "installments": null,
+    "tags": [],
+    "sizes": ["Único (20g)", "Único (30g)"],
+    "description": "Descrição de exemplo para o Horus Gel. Energia rápida para seus treinos mais intensos.",
+    "specifications": null,
+    "category": "Suplementos"
+  },
+
+  {
+    "id": 13,
+    "name": "Tênis Addizero",
+    "imageUrl": "/img/adizero-principal.png",
+    "price": 899.99,
+    "originalPrice": null,
+    "discount": null,
+    "installments": "10x de R$ 89,90",
+    "tags": ["Lançamento", "Frete Grátis"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44],
+    "thumbnails": [
+      "/img/adizero-slot1.png",
+      "/img/adizero-slot2.png",
+      "/img/adizero-slot3.png",
+      "/img/adizero-slot4.png",
+      "/img/adizero-slot5.png",
+      "/img/adizero-principal.png"
+    ],
+    "description": "Descrição de exemplo para o Tênis Corre Supra 2. Conforto e velocidade para suas corridas.",
+    "specifications": [
+      { "type": "indicado", "value": "Corrida" },
+      { "type": "pisada", "value": "Neutra" },
+      { "type": "distancia", "value": "10 km" },
+      { "type": "tecnologia", "value": "SupraFoam" },
+      { "type": "drop", "value": "8 mm" },
+      { "type": "peso", "value": "240g" }
+    ],
+    "category": "Calçados"
+  },
+
+  {
+    "id": 14,
+    "name": "Tênis Mizuno Wave",
+    "imageUrl": "/img/mizuno-wave-principal.png",
+    "price": 1009.99,
+    "originalPrice": null,
+    "discount": null,
+    "installments": "10x de R$ 109,90",
+    "tags": ["Lançamento", "Frete Grátis"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44],
+    "thumbnails": [
+      "/img/mizuno-wave-slot1.png",
+      "/img/mizuno-wave-slot2.png",
+      "/img/mizuno-wave-slot3.png",
+      "/img/mizuno-wave-slot4.png",
+      "/img/mizuno-wave-slot1.png",
+      "/img/mizuno-wave-principal.png"
+    ],
+    "description": "Descrição de exemplo para o Tênis Corre Supra 2. Conforto e velocidade para suas corridas.",
+    "specifications": [
+      { "type": "indicado", "value": "Corrida" },
+      { "type": "pisada", "value": "Neutra" },
+      { "type": "distancia", "value": "10 km" },
+      { "type": "tecnologia", "value": "SupraFoam" },
+      { "type": "drop", "value": "8 mm" },
+      { "type": "peso", "value": "240g" }
+    ],
+    "category": "Calçados"
+  },
+  {
+    "id": 15,
+    "name": "Tênis Fila float Maxxi",
+    "imageUrl": "/img/fila-principal.png",
+    "price": 1009.99,
+    "originalPrice": null,
+    "discount": null,
+    "installments": "10x de R$ 109,90",
+    "tags": ["Lançamento", "Frete Grátis"],
+    "sizes": [38, 39, 40, 41, 42, 43, 44],
+    "thumbnails": [
+      "/img/fila-slot1.png",
+      "/img/fila-slot2.png",
+      "/img/fila-slot3.png",
+      "/img/fila-slot4.png",
+      "/img/fila-slot1.png",
+      "/img/fila-principal.png"
+    ],
+    "description": "Descrição de exemplo para o Tênis Corre Supra 2. Conforto e velocidade para suas corridas.",
+    "specifications": [
+      { "type": "indicado", "value": "Corrida" },
+      { "type": "pisada", "value": "Neutra" },
+      { "type": "distancia", "value": "10 km" },
+      { "type": "tecnologia", "value": "SupraFoam" },
+      { "type": "drop", "value": "8 mm" },
+      { "type": "peso", "value": "240g" }
+    ],
+    "category": "Calçados"
+  }
 ]
