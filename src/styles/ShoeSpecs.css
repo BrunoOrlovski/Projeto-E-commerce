@@ -23,9 +23,9 @@
   text-align: center;
 }
 
-.spec-item:hover {
+/* .spec-item:hover {
   background-color: #ececec;
-}
+} */
 
 .spec-image {
   width: 48px;

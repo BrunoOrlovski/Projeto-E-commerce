@@ -3,6 +3,13 @@ import "../styles/CardProduct.css";
 import { useNavigate } from "react-router-dom"; 
 import { toast } from "react-toastify";
 
+const formatCurrency = (value) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(value);
+};
+
 function ProductCard({ product }) {
   const navigate = useNavigate();
 
@@ -87,7 +94,7 @@ function ProductCard({ product }) {
       <div className="product-pricing">
         {product.originalPrice ? (
           <p className="original-price">
-            DE R$ {product.originalPrice.toFixed(2).replace(".", ",")}
+            DE R$ {formatCurrency(product.originalPrice)}
           </p>
         ) : (
           <p className="original-price" style={{ visibility: "hidden" }}>
@@ -96,7 +103,7 @@ function ProductCard({ product }) {
         )}
 
         <p className="product-price">
-          Por R$ {product.price.toFixed(2).replace(".", ",")}
+          Por R$ {formatCurrency(product.price)}
         </p>
 
         {product.installments && (

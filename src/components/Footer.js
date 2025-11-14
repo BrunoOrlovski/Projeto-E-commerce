@@ -13,6 +13,8 @@ const Footer = () => {
             <li><a href="/">Sobre Nós</a></li>
             <li><a href="/">Contato</a></li>
             <li><a href="/">Trabalhe Conosco</a></li>
+            <li><a href="/">Política de Privacidade</a></li>
+            <li><a href="/">Soluções Corporativos</a></li>
           </ul>
         </div>
 
@@ -21,6 +23,17 @@ const Footer = () => {
           <ul>
             <li><a href="/">Dúvidas Frequentes</a></li>
             <li><a href="/">Como Comprar</a></li>
+            <li><a href="/">Segurança e Privacidade</a></li>
+            <li><a href="/">Acessibilidade</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-column">
+          <h4>Ofertas Especiais</h4>
+          <ul>
+            <li><a href="/">Promoções</a></li>
+            <li><a href="/">Black Week</a></li>
+            <li><a href="/">Categorias</a></li>
           </ul>
         </div>
 
@@ -31,6 +44,8 @@ const Footer = () => {
             <li><a href="/trocas">Trocas e Devoluções</a></li>
             <li><a href="/entregas">Entregas</a></li>
             <li><a href="/ShoppCart">Carrinho</a></li>
+            <li><a href="/">Pagamentos</a></li>
+            <li><a href="/">Cancelamento</a></li>
           </ul>
         </div>
 

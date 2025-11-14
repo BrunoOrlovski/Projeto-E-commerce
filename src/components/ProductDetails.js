@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/ProductDetails.css';
 import { useNavigate } from 'react-router-dom';
+import { GiPriceTag } from 'react-icons/gi';
+
+const formatCurrency = (value) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(value);
+};
 
 function ProductDetails({ product }) {
   const [selectedSize, setSelectedSize] = useState(null);
@@ -91,7 +99,7 @@ function ProductDetails({ product }) {
 
         <div className="price">
           <p className="value">
-            R$ {product.price?.toFixed(2).replace('.', ',')}
+           {formatCurrency(product.price)}
           </p>
           {product.installments && (
             <p className="installments">{product.installments}</p>

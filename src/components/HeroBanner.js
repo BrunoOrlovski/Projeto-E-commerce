@@ -5,13 +5,20 @@ import '../styles/HeroBanner.css';
 function HeroBanner() {
     return (
         <section className="hero-banner">
-            <div className="hero-content">
-                <h1 className="hero-title"># A CIDADE É SUA PISTA.</h1>
+            
+            <div className="hero-content-left">
+                <h1 className="hero-title-slogan"># A CIDADE É SUA PISTA.</h1>
                 <p className="hero-subtitle">Equipamentos e acessórios para você explorar cada km da sua jornada urbana</p>
+            </div>
+
+            <div className="hero-content-right">
+                <h1 className="hero-title-promo">BLACK WEEK</h1>
+                <p className="hero-subtitle-promo">Produtos com até 80% OFF</p>
                 <Link to="/promocoes" className="hero-button">
-                    CONHEÇA MAIS
+                    VER PROMOÇÕES
                 </Link>
             </div>
+
         </section>
     )    
 }
