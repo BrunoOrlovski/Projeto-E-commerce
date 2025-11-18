@@ -1,29 +1,33 @@
-
-import react from 'react';
+import React from 'react'; 
 import Cart from '../components/Cart';
 import Breadcrumbs from "../components/Breadcrumbs";
 import ProductSection from '../components/ProductSection';
-import { breadcrumb, relacionados } from "../data";
-import {useCart} from "../Hooks/useCart";
-
+import { useCart } from "../Hooks/useCart";
+import { useProducts } from "../Hooks/useProduct"; 
+import { useFilteredProducts } from "../Hooks/useFilteredProducts"; 
 
 function CartPage() {
 
   const {cartItems, setCartItems, removeItem, clearCart} = useCart();
+  const { data: allProducts } = useProducts();
+  const { maisProcurados } = useFilteredProducts(allProducts);
 
   return (
     <div>
-      <Breadcrumbs items={breadcrumb} />
+      <Breadcrumbs />
+      
       <Cart 
         cartItems={cartItems} 
         setCartItems={setCartItems} 
         onRemove={removeItem} 
         onClear={clearCart} 
       />
-      <ProductSection 
-        title="Relacionados" 
-        products={relacionados} 
-      />
+      {maisProcurados.length > 0 && (
+        <ProductSection 
+          title="VOCÊ TAMBÉM PODE GOSTAR" 
+          products={maisProcurados} 
+        />
+      )}
     </div>
   );
 }

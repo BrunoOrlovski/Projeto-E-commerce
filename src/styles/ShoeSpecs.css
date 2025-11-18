@@ -78,3 +78,14 @@
   color: #333;
   margin-left: 30px;
 }
+
+@media (max-width: 768px) {
+
+.spec-item {
+ 
+  width: 240px;
+  height: 250px;
+}
+
+
+}

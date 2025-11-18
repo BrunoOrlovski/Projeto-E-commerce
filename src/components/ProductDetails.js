@@ -30,7 +30,6 @@ function ProductDetails({ product }) {
   };
 
   const handleBuy = () => {
-    
 
     if (product.sizes?.length > 0 && !selectedSize) {
       alert("Por favor, selecione um tamanho para continuar.");
@@ -39,6 +38,12 @@ function ProductDetails({ product }) {
 
     const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
     const existingItem = storedCart.find(item => item.id === product.id);
+
+    const quantityInCart = existingItem ? existingItem.quantity : 0;
+    if (quantityInCart >= product.stock) {
+      alert("Desculpe, você já atingiu o limite de estoque para este item.");
+      return;
+    }
 
     const newItem = {
       ...product,
@@ -65,6 +70,17 @@ function ProductDetails({ product }) {
     navigate("/ShoppCart");
     window.dispatchEvent(new CustomEvent('cartUpdated'));
   };
+
+  let estoqueInfo;
+  const isOutOfStock = product.stock === 0;
+
+  if (isOutOfStock) {
+    estoqueInfo = <span className="stock-info out-of-stock">Produto Esgotado</span>;
+  } else if (product.stock <= 10) {
+    estoqueInfo = <span className="stock-info low-stock">{`Apenas ${product.stock} unidades restantes!`}</span>;
+  } else {
+    estoqueInfo = <span className="stock-info in-stock">Em estoque</span>;
+  }
 
   return (
     <div className="product-details">
@@ -122,9 +138,17 @@ function ProductDetails({ product }) {
             </div>
           </div>
         )}
+        
+        <div className="stock-container">
+          {estoqueInfo}
+        </div>
 
-        <button className="buy-button" onClick={handleBuy}>
-          COMPRAR AGORA
+        <button 
+          className="buy-button" 
+          onClick={handleBuy} 
+          disabled={isOutOfStock}
+        >
+          {isOutOfStock ? "Indisponível" : "COMPRAR AGORA"}
         </button>
 
         <div className="payment-methods">

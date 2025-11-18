@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 const TOTAL_STEPS = 3;
 
-// Este é o hook que conterá toda a lógica
 export const useRegistrationForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({ 
@@ -14,12 +13,8 @@ export const useRegistrationForm = () => {
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState('');
   const navigate = useNavigate();
-
-  // --- FUNÇÕES DE VALIDAÇÃO (Envolvidas em useCallback) ---
-  // Elas só serão recriadas se o formData mudar
   
   const validateStep1 = useCallback(() => { 
-    /** @type {Record<string, string>} */
     const newErrors = {};
     if (!formData.email.trim()) newErrors.email = 'O E-mail é obrigatório.';
     else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'E-mail inválido.';
@@ -31,7 +26,6 @@ export const useRegistrationForm = () => {
   }, [formData]);
 
   const validateStep2 = useCallback(() => { 
-    /** @type {Record<string, string>} */
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = 'O Nome é obrigatório.';
     if (!formData.cpf.trim()) newErrors.cpf = 'O CPF é obrigatório.';
@@ -40,7 +34,6 @@ export const useRegistrationForm = () => {
   }, [formData]);
 
   const validateStep3 = useCallback(() => { 
-    /** @type {Record<string, string>} */
     const newErrors = {};
     if (!formData.cep.trim()) newErrors.cep = 'O CEP é obrigatório.';
     if (!formData.street.trim()) newErrors.street = 'A Rua é obrigatória.';
@@ -51,7 +44,6 @@ export const useRegistrationForm = () => {
     return newErrors;
   }, [formData]);
 
-  // --- FUNÇÕES DE MANIPULAÇÃO (Handlers) ---
 
   const handleChange = useCallback((e) => {
     const { name, value } = e.target;
@@ -59,7 +51,7 @@ export const useRegistrationForm = () => {
     if (errors[name]) {
       setErrors(prevErrors => ({ ...prevErrors, [name]: null }));
     }
-  }, [errors]); // Depende de 'errors' para limpar o erro
+  }, [errors]); 
 
   const handleNext = useCallback(() => {
     let stepErrors = {};
@@ -109,11 +101,8 @@ export const useRegistrationForm = () => {
     }
   }, [formData, navigate, validateStep3]);
 
-  // --- VALORES CALCULADOS ---
   const progressWidth = `${((currentStep - 1) / (TOTAL_STEPS - 1)) * 100}%`;
 
-  // --- RETORNO DO HOOK ---
-  // Exporta tudo que o componente de JSX precisa
   return {
     currentStep,
     TOTAL_STEPS,

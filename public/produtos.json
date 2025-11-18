@@ -11,7 +11,8 @@
     "sizes": ["Único"],
     "description": "Descrição de exemplo para o Fone de Ouvido. Ótima qualidade de som e conforto.",
     "specifications": null,
-    "category": "Eletrônicos"
+    "category": "Eletrônicos",
+    "stock": 45
   },
   {
     "id": 2,
@@ -25,7 +26,8 @@
     "sizes": ["Único"],
     "description": "Descrição de exemplo para o Smartwatch Ultra. Monitore sua saúde e atividades.",
     "specifications": null,
-    "category": "Eletrônicos"
+    "category": "Eletrônicos",
+    "stock": 22
   },
   {
     "id": 3,
@@ -39,7 +41,8 @@
     "sizes": ["N/A"],
     "description": "Descrição de exemplo para a Câmera Compacta Pro. Capture momentos inesquecíveis.",
     "specifications": null,
-    "category": "Eletrônicos"
+    "category": "Eletrônicos",
+    "stock": 15
   },
   {
     "id": 4,
@@ -53,7 +56,8 @@
     "sizes": ["Pequeno"],
     "description": "Descrição de exemplo para a Caixa de Som Portátil. Leve sua música para qualquer lugar.",
     "specifications": null,
-    "category": "Eletrônicos"
+    "category": "Eletrônicos",
+    "stock": 60
   },
   {
     "id": 5,
@@ -75,7 +79,8 @@
       { "type": "drop", "value": "10 mm" },
       { "type": "peso", "value": "250g" }
     ],
-    "category": "Calçados"
+    "category": "Calçados",
+    "stock": 80
   },
   {
     "id": 6,
@@ -96,7 +101,8 @@
       { "type": "drop", "value": "8 mm" },
       { "type": "peso", "value": "240g" }
     ],
-    "category": "Calçados"
+    "category": "Calçados",
+    "stock": 75
   },
   {
     "id": 7,
@@ -110,7 +116,8 @@
     "sizes": ["P", "M", "G"],
     "description": "Descrição de exemplo para a Pochette Fitness. Leve seus itens essenciais com segurança.",
     "specifications": null,
-    "category": "Acessórios"
+    "category": "Acessórios",
+    "stock": 40
   },
   {
     "id": 8,
@@ -124,7 +131,8 @@
     "sizes": ["PP", "P", "M", "G", "GG"],
     "description": "Descrição de exemplo para o Top Signature Samba 1. Suporte e estilo para seus treinos.",
     "specifications": null,
-    "category": "Vestuário"
+    "category": "Vestuário",
+    "stock": 90
   },
   {
     "id": 9,
@@ -154,7 +162,8 @@
       { "type": "drop", "value": "8 mm" },
       { "type": "peso", "value": "230g" }
     ],
-    "category": "Calçados"
+    "category": "Calçados",
+    "stock": 55
   },
   {
     "id": 10,
@@ -168,7 +177,8 @@
     "sizes": ["Único"],
     "description": "Descrição de exemplo para o Amazfit GTR 4 New. Bateria de longa duração e GPS preciso.",
     "specifications": null,
-    "category": "Eletrônicos"
+    "category": "Eletrônicos",
+    "stock": 30
   },
   {
     "id": 11,
@@ -182,7 +192,8 @@
     "sizes": ["Único"],
     "description": "Descrição de exemplo para Óculos de Sol. Proteção e conforto para suas corridas.",
     "specifications": null,
-    "category": "Acessórios"
+    "category": "Acessórios",
+    "stock": 65
   },
   {
     "id": 12,
@@ -196,9 +207,9 @@
     "sizes": ["Único (20g)", "Único (30g)"],
     "description": "Descrição de exemplo para o Horus Gel. Energia rápida para seus treinos mais intensos.",
     "specifications": null,
-    "category": "Suplementos"
+    "category": "Suplementos",
+    "stock": 120
   },
-
   {
     "id": 13,
     "name": "Tênis Addizero",
@@ -226,9 +237,9 @@
       { "type": "drop", "value": "8 mm" },
       { "type": "peso", "value": "240g" }
     ],
-    "category": "Calçados"
+    "category": "Calçados",
+    "stock": 48
   },
-
   {
     "id": 14,
     "name": "Tênis Mizuno Wave",
@@ -256,7 +267,8 @@
       { "type": "drop", "value": "8 mm" },
       { "type": "peso", "value": "240g" }
     ],
-    "category": "Calçados"
+    "category": "Calçados",
+    "stock": 52
   },
   {
     "id": 15,
@@ -285,6 +297,7 @@
       { "type": "drop", "value": "8 mm" },
       { "type": "peso", "value": "240g" }
     ],
-    "category": "Calçados"
+    "category": "Calçados",
+    "stock": 0
   }
 ]

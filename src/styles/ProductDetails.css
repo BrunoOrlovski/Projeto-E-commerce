@@ -1,30 +1,28 @@
 .product-details {
   display: flex;
   flex-wrap: nowrap;
-  gap: 60px; 
+  gap: 80px; 
   padding: 40px;
   background-color: #ffffff;
   font-family: 'Segoe UI', sans-serif;
-  align-items: flex-start;
   margin: 60px 30px 30px;
   border-radius: 5px;
-  /* box-shadow: 0 4px 12px rgba(0,0,0,0.2); */
-/*   border: 1px solid #ccc; */
 }
 .gallery {
   flex: 2;
   max-width: 700px;
-  height: 500px;
-  padding: 30px;
+  height: 600px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: -19px;
+  gap:10px;
 }
 
 .main-image {
   width: 100%;
-  height: 100%;
+  flex: 1 1 auto;    
+  min-height: 0;      
   object-fit: contain;
   object-position: center;
   border-radius: 8px;
@@ -79,7 +77,7 @@
   border-radius: 11px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   border: 1px solid #ccc;
-  padding: 20px 30px 30px;
+  padding: 20px 30px 30px; 
   display: flex; 
   flex-direction: column; 
   margin-top: -20px;
@@ -92,7 +90,7 @@
 .info h2 {
   font-size: 1.8rem;
   margin-bottom: 0; 
-  margin-top: -8px;
+  margin-top: -8px; 
 }
 
 .color {
@@ -108,9 +106,10 @@
   margin-bottom: 0; 
 }
 
-.price {
+.info .price {
   margin-bottom: 0; 
-  margin-top: 10px;
+  margin-top: 10px; 
+  text-align: center;
 }
 
 .value {
@@ -122,13 +121,13 @@
 .info .installments {
   font-size: 1rem;
   color: #666;
-  margin-top: -15px;
+  margin-top: -15px; 
   text-align: center; 
 }
 
 .sizes {
   margin-bottom: 0; 
-  text-align: center;
+  text-align: center; 
 }
 
 .size-options {
@@ -158,6 +157,29 @@
   color: #fff;
 }
 
+.stock-container {
+  text-align: center;
+  margin-top: 5px; 
+}
+
+.stock-info {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.stock-info.in-stock {
+  color: #28a745; 
+}
+
+.stock-info.low-stock {
+  color: #ffc107; 
+}
+
+.stock-info.out-of-stock {
+  color: #dc3545; 
+  font-weight: 600;
+}
+
 .buy-button {
   background-color: #300cf8;
   color: #fff;
@@ -168,6 +190,14 @@
   cursor: pointer;
   margin-bottom: 0; 
   transition: background-color 0.3s ease;
+}
+
+.buy-button:disabled,
+.buy-button:disabled:hover {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .buy-button:hover {
@@ -221,6 +251,11 @@
   .gallery,
   .info {
     max-width: 100%;
+    height: auto; 
+  }
+  
+  .gallery {
+     min-height: 400px; 
   }
 
   .thumbnail {
@@ -230,5 +265,9 @@
 
   .buy-button {
     width: 100%;
+  }
+
+  .info { 
+    max-width: 100%; 	
   }
 }

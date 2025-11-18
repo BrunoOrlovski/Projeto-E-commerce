@@ -143,11 +143,3 @@
   .hero-subtitle-promo { font-size: 1.2rem; }
   .hero-button { font-size: 1rem; padding: 12px 25px; }
 }
-
-@media (max-width: 480px) {
-  .hero-title-slogan { font-size: 1.6rem; }
-  .hero-title-promo { font-size: 2.2rem; }
-  .hero-subtitle { font-size: 0.9rem; }
-  .hero-subtitle-promo { font-size: 1rem; }
-  .hero-button { padding: 10px 20px; font-size: 0.9rem; }
-}

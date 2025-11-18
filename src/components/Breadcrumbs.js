@@ -1,10 +1,41 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useMemo } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Breadcrumbs.css'; 
 
-function Breadcrumbs({ items }) {
-    if (!items || items.length === 0) {
+function Breadcrumbs({ produto }) {
+    
+    const location = useLocation(); 
+
+    const items = useMemo(() => {
+        const path = location.pathname;
+
+        if (produto) {
+            return [
+                { label: "Home", path: "/" },
+                { label: produto.category, path: `/categoria/${produto.category}` },
+                { label: produto.name, path: null } 
+            ];
+        }
+        
+        if (path === '/ShoppCart') {
+            return [
+                { label: "Home", path: "/" },
+                { label: "Carrinho", path: null }
+            ];
+        }
+        
+        if (path === '/login' || path === '/register') {
+             return [
+                { label: "Home", path: "/" },
+                { label: "Login / Cadastro", path: null }
+            ];
+        }
+
+        return []; 
+
+    }, [location, produto]); 
+
+    if (!items || items.length === 0 || location.pathname === '/') {
         return null; 
     }
 
@@ -13,7 +44,7 @@ function Breadcrumbs({ items }) {
             <ol className="breadcrumbs-list">
                 {items.map((item, index) => (
                     <li key={index} className="breadcrumbs-item">
-                        {index < items.length - 1 ? (
+                        {index < items.length - 1 && item.path ? (
                             <Link to={item.path} className="breadcrumbs-link">
                                 {item.label}
                             </Link>

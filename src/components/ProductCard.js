@@ -57,9 +57,7 @@ function ProductCard({ product }) {
       console.error("Erro ao salvar no carrinho:", e);
       toast.error("Erro ao adicionar o produto.");
     }
-    
-    /* toast.success("Produto adicionado ao carrinho!");
-     window.dispatchEvent(new CustomEvent('cartUpdated')); */
+   
   };
 
   return (

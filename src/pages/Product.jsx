@@ -48,17 +48,6 @@ function ProductPage() {
 
   }, [produtoSelecionado, calcados, eletronicos, vestuario, acessorios, suplementos, allProducts]);
 
-  const dynamicBreadcrumbs = useMemo(() => {
-    if (!produtoSelecionado) return []; 
-
-    return [
-      { label: "Home", path: "/" },
-      { label: produtoSelecionado.category, path: `/categoria/${produtoSelecionado.category}` },
-      { label: produtoSelecionado.name, path: null } 
-    ];
-  }, [produtoSelecionado]);
-
-
   if (loading) return <p>Carregando produto...</p>;
   if (error) return <p>Ocorreu um erro ao carregar os dados.</p>;
   if (!produtoSelecionado) return <p>Produto não encontrado.</p>;
@@ -67,7 +56,7 @@ function ProductPage() {
     <div className="product-container">
       <header>
         <BannerProductPage />
-        <Breadcrumbs items={dynamicBreadcrumbs} />
+        <Breadcrumbs produto={produtoSelecionado} />
       </header>
       <main>
         <ProductDetails product={produtoSelecionado} />
