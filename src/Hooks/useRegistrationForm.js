@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const TOTAL_STEPS = 3;
 
@@ -70,10 +71,12 @@ export const useRegistrationForm = () => {
     setErrors({});
     setCurrentStep(prevStep => prevStep - 1);
   }, []);
+  
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
     setSuccess('');
+    toast.success("Usuário Cadastrado!");
     const stepErrors = validateStep3();
 
     if (Object.keys(stepErrors).length === 0) {

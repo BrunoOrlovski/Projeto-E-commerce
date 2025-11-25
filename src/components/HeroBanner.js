@@ -13,12 +13,13 @@ function HeroBanner() {
 
             <div className="hero-content-right">
                 <h1 className="hero-title-promo">BLACK WEEK</h1>
-                <p className="hero-subtitle-promo">Produtos com até 80% OFF</p>
+                <p className="hero-subtitle-promo">
+                    Produtos com até <span className="discount-value-hero-banner">80% OFF</span>
+                </p>
                 <Link to="/promocoes" className="hero-button">
                     VER PROMOÇÕES
                 </Link>
             </div>
-
         </section>
     )    
 }

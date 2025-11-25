@@ -1,17 +1,26 @@
 [
   {
     "id": 1,
-    "name": "Fone de Ouvido",
-    "price": 99.90,
-    "imageUrl": "/img/fone1.png",
-    "discount": 0.23,
-    "tags": ["Lançamento"],
-    "originalPrice": 129.90,
-    "installments": "3x de R$ 33,30",
-    "sizes": ["Único"],
+    "name": "JBL Endurance Peak 3",
+    "price": 899.90,
+    "imageUrl": "/img/fonejbl-principal.png",
+    "discount": 0.10,
+    "color": "Azul",
+    "tags": ["Lançamento", "Frete Grátis"],
+    "originalPrice": 999.90,
+    "installments": "10x de R$ 89,99",
+    "sizes": null,
     "description": "Descrição de exemplo para o Fone de Ouvido. Ótima qualidade de som e conforto.",
     "specifications": null,
     "category": "Eletrônicos",
+    "thumbnails": [
+      "/img/fonejbl-principal.png",
+      "/img/fonejbl-2.png",
+      "/img/fonejbl-3.png",
+      "/img/fonejbl-4.png",
+      "/img/fonejbl-5.png",
+      "/img/fonejobl-6.png"
+    ],
     "stock": 45
   },
   {
@@ -21,6 +30,7 @@
     "imageUrl": "/img/smartwatch1.jpg",
     "discount": null,
     "tags": [],
+    "color":"Preto",
     "originalPrice": null,
     "installments": "10x de R$ 39,90",
     "sizes": ["Único"],
@@ -62,12 +72,12 @@
   {
     "id": 5,
     "name": "Tênis Nike Zoom Fly 6",
-    "imageUrl": "/img/nike zoom.png",
-    "color": "branco",
-    "price": 199.99,
+    "imageUrl": "/img/nikezoom-principal.png",
+    "color": "laranja",
+    "price": 1399.99,
     "originalPrice": null,
     "discount": null,
-    "installments": "5x de R$ 39,99",
+    "installments": "10x de R$ 139,99",
     "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
     "sizes": [38, 39, 40, 41, 42, 43, 44],
     "description": "Descrição de exemplo para o Tênis Nike Zoom Fly 6. Ideal para performance e estilo.",
@@ -80,15 +90,24 @@
       { "type": "peso", "value": "250g" }
     ],
     "category": "Calçados",
+    "thumbnails": [
+      "/img/nikezoom-1.png",
+      "/img/nikezoom-2.png",
+      "/img/nikezoom-3.png",
+      "/img/nikezoom-4.png",
+      "/img/nikezoom-1.png",
+      "/img/nikezoom-principal.png"
+    ],
     "stock": 80
   },
   {
     "id": 6,
     "name": "Tênis Corre Supra 2",
-    "imageUrl": "/img/corre supra.png",
+    "imageUrl": "/img/supra2-principal.png",
     "price": 299.99,
     "originalPrice": null,
     "discount": null,
+    "color":"Azul",
     "installments": "8x de R$ 37,49",
     "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
     "sizes": [38, 39, 40, 41, 42, 43, 44],
@@ -102,35 +121,61 @@
       { "type": "peso", "value": "240g" }
     ],
     "category": "Calçados",
+    "thumbnails": [
+      "/img/supra2-1.png",
+      "/img/supra2-2.png",
+      "/img/supra2-3.png",
+      "/img/supra2-4.png",
+      "/img/supra2-5.png",
+      "/img/supra2-principal.png"
+    ],
     "stock": 75
   },
   {
     "id": 7,
     "name": "Pochette Fitness Corrida",
-    "imageUrl": "/img/pochette.png",
+    "imageUrl": "/img/pochete-3.png",
     "price": 199.99,
     "originalPrice": null,
     "discount": null,
+    "color":"Preto",
     "installments": "5x de R$ 39,99",
     "tags": ["Mais Vendido"],
-    "sizes": ["P", "M", "G"],
+    "sizes": null,
     "description": "Descrição de exemplo para a Pochette Fitness. Leve seus itens essenciais com segurança.",
     "specifications": null,
     "category": "Acessórios",
+    "thumbnails": [
+      "/img/pochete-1.png",
+      "/img/pochete-2.png",
+      "/img/pochete-3.png",
+      "/img/pochete-4.png",
+      "/img/pochete-1.png",
+      "/img/pochette-principal.png"
+    ],
     "stock": 40
   },
   {
     "id": 8,
     "name": "Top Signature Samba 1",
-    "imageUrl": "/img/top.png",
+    "imageUrl": "/img/topsignature-4.png",
     "price": 199.99,
     "originalPrice": null,
+    "color":"Preto",
     "discount": null,
     "installments": "5x de R$ 39,99",
     "tags": ["Mais Vendido"],
     "sizes": ["PP", "P", "M", "G", "GG"],
     "description": "Descrição de exemplo para o Top Signature Samba 1. Suporte e estilo para seus treinos.",
     "specifications": null,
+    "thumbnails": [
+      "/img/topsignature-1.png",
+      "/img/topsignature-2.png",
+      "/img/topsignature-3.png",
+      "/img/topsignature-2.png",
+      "/img/topsignature-4.png",
+      "/img/topsignature-principal.png"
+    ],
     "category": "Vestuário",
     "stock": 90
   },
@@ -169,14 +214,23 @@
     "id": 10,
     "name": "Amazfit GTR 4 New",
     "imageUrl": "/img/relogio.png",
-    "price": 1099.90,
+    "price": 1899.90,
     "originalPrice": null,
     "discount": null,
-    "installments": "10x de R$ 109,90",
+    "color":"Preto",
+    "installments": "10x de R$ 189,90",
     "tags": ["Lançamento", "Frete Grátis", "Mais Vendido"],
     "sizes": ["Único"],
     "description": "Descrição de exemplo para o Amazfit GTR 4 New. Bateria de longa duração e GPS preciso.",
     "specifications": null,
+    "thumbnails": [
+      "/img/relogio-1.png",
+      "/img/relogio-2.png",
+      "/img/relogio-3.png",
+      "/img/relogio-4.png",
+      "/img/relogio-1.png",
+      "/img/relogio-2.png"
+    ],
     "category": "Eletrônicos",
     "stock": 30
   },
@@ -216,6 +270,7 @@
     "imageUrl": "/img/adizero-principal.png",
     "price": 899.99,
     "originalPrice": null,
+    "color": "Branco/Laranja",
     "discount": null,
     "installments": "10x de R$ 89,90",
     "tags": ["Lançamento", "Frete Grátis"],
@@ -247,6 +302,7 @@
     "price": 1009.99,
     "originalPrice": null,
     "discount": null,
+    "color":"Verde/Cinza",
     "installments": "10x de R$ 109,90",
     "tags": ["Lançamento", "Frete Grátis"],
     "sizes": [38, 39, 40, 41, 42, 43, 44],
@@ -270,6 +326,7 @@
     "category": "Calçados",
     "stock": 52
   },
+
   {
     "id": 15,
     "name": "Tênis Fila float Maxxi",
@@ -277,6 +334,7 @@
     "price": 1009.99,
     "originalPrice": null,
     "discount": null,
+    "color":"Branco/Laranja",
     "installments": "10x de R$ 109,90",
     "tags": ["Lançamento", "Frete Grátis"],
     "sizes": [38, 39, 40, 41, 42, 43, 44],
@@ -299,5 +357,99 @@
     ],
     "category": "Calçados",
     "stock": 0
+  },
+
+  {
+    "id": 16,
+    "name": "Short Dry Fit Compressão Lupus",
+    "imageUrl": "/img/calçãoMasc-principal.png",
+    "price": 109.99,
+    "originalPrice": null,
+    "discount": null,
+    "color":"Preto",
+    "installments": "10x de R$ 10,90",
+    "tags": ["Lançamento"],
+    "sizes": ["P", "M", "G", "GG"],
+    "thumbnails": [
+      "/img/calçãoMasc-1.png",
+      "/img/calçãoMasc-2.png",
+      "/img/calçãoMasc-3.png",
+      "/img/calçãoMasc-4.png",
+      "/img/calçãoMasc-2.png",
+      "/img/calçãoMasc-principal.png"
+    ],
+    "description": "Este Short Dry Fit Compressão Lupus Preto oferece compressão estratégica para suportar seus músculos durante a atividade física, promovendo melhor circulação e recuperação. O tecido dry fit garante conforto e controle de umidade, mantendo a pele seca mesmo nos treinos mais intensos. Projetado para proporcionar liberdade total de movimento, é ideal para quem busca desempenho e bem-estar em alta performance.",
+    "category": "Vestuário",
+    "stock": 50
+  },
+
+  {
+    "id": 17,
+    "name": "Bermuda Grit Bossa Azul",
+    "imageUrl": "/img/bermudagripazul-principal.png",
+    "price": 129.99,
+    "originalPrice": null,
+    "discount": null,
+    "color":"Azul",
+    "installments": "10x de R$ 12,90",
+    "tags": null,
+    "sizes":["P", "M", "G", "GG"],
+    "thumbnails": [
+      "/img/bermudagripazul-1.png",
+      "/img/bermudagripazul-2.png",
+      "/img/bermudagripazul-3.png",
+      "/img/bermudagripazul-4.png",
+      "/img/bermudagripazul-6.png",
+      "/img/bermudagripazul-principal.png"
+    ],
+    "description": "GRIT | Corra mais longe Resistência para longas distâncias A bermuda para corrida GRIT Bossa 3 Bolsos 15cm é um equipamento projetado para longas distâncias e dias de competição. É indicado para quem busca uma bermuda para correr com bolsos ergonômicos, para levar celular, garrafinha de hidratação, documento, chave ou o que mais precisar.",
+    "category": "Vestuário",
+    "stock": 8
+  },
+  {
+    "id": 18,
+    "name": "Bermuda Grit Bossa Laranja",
+    "imageUrl": "/img/bermudagriplaranja-principal.png",
+    "price": 129.99,
+    "originalPrice": null,
+    "discount": null,
+    "color":"Laranja",
+    "installments": "10x de R$ 12,90",
+    "tags": ["Lançamento", "Frete Grátis"],
+    "sizes": ["P", "M", "G", "GG"],
+    "thumbnails": [
+      "/img/bermudagriplaranja-1.png",
+      "/img/bermudagriplaranja-2.png",
+      "/img/bermudagriplaranja-3.png",
+      "/img/bermudagriplaranja-4.png",
+      "/img/bermudagriplaranja-5.png",
+      "/img/bermudagriplaranja-principal.png"
+    ],
+    "description": "A bermuda para corrida GRIT Bossa 3 Bolsos 15cm é um equipamento projetado para longas distâncias e dias de competição. É indicado para quem busca uma bermuda para correr com bolsos ergonômicos, para levar celular, garrafinha de hidratação, documento, chave ou o que mais precisar.",
+    "category": "Vestuário",
+    "stock": 20
+  },
+  {
+    "id": 19,
+    "name": "Short Dry Fit Compressão Lupus",
+    "imageUrl": "/img/camisetaazul-principal.png",
+    "price": 109.99,
+    "originalPrice": null,
+    "discount": null,
+    "color":"Azul",
+    "installments": "10x de R$ 10,90",
+    "tags": ["Lançamento"],
+    "sizes": ["P", "M", "G", "GG"],
+    "thumbnails": [
+      "/img/camisetaazul-1.png",
+      "/img/camisetaazul-2.png",
+      "/img/camisetaazul-3.png",
+      "/img/camisetaazul-4.png",
+      "/img/camisetaazul-5.png",
+      "/img/camisetaazul-principal.png"
+    ],
+    "description": "A camiseta para treino Keep Cool Pep True Dry Manga Longa é um equipamento projetado para te acompanhar em qualquer tipo de treino. É indicada para quem busca uma camiseta masculina manga longa, leve e de secagem rápida.",
+    "category": "Vestuário",
+    "stock": 9
   }
 ]
