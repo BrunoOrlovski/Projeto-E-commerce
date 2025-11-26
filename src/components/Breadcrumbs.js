@@ -24,13 +24,13 @@ function Breadcrumbs({ produto }) {
             ];
         }
         
-        if (path === '/login' || path === '/register') {
+       /*  if (path === '/login' || path === '/register') {
              return [
                 { label: "Home", path: "/" },
                 { label: "Login / Cadastro", path: null }
             ];
         }
-
+ */
         return []; 
 
     }, [location, produto]); 

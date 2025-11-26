@@ -167,3 +167,62 @@
   margin-top: 10px;
   margin-bottom: 15px; 
 }
+
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-container input {
+  width: 100%;
+  padding-right: 40px !important; 
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: auto !important;
+  cursor: pointer;
+  color: #666 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; 
+  top: 0;
+}
+
+.password-toggle-btn:hover {
+  color: #007bff !important;
+  background: none !important;
+}
+
+.forgot-password-link {
+  text-align: right;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+.link-button {
+  background: none !important;
+  border: none !important;
+  color: #007bff !important;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 !important;
+  font-weight: normal !important;
+  width: auto !important;
+  margin-top: 0 !important;
+  display: inline-block;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+  color: #0056b3 !important;
+  background: none !important;
+}

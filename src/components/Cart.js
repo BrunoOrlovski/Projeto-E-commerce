@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Cart.css';
 
+
 const formatCurrency = (value) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -104,7 +105,7 @@ function Cart({ cartItems, setCartItems, onRemove, onClear }) {
             <div className="summary-values">
               <div className="summary-line">
                 <span>Subtotal ({cartItems.reduce((acc, item) => acc + item.quantity, 0)} itens)</span>
-                <span>Subtotal ({cartItems.reduce((acc, item) => acc + item.quantity, 0)} itens)</span>
+                <span>{formatCurrency(cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0))}</span>
               </div>
               <div className="summary-line">
                 <span>Desconto</span>
