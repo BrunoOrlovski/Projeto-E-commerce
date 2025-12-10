@@ -5,7 +5,7 @@ function LoginForm({ onLoginSuccess }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  // NOVO: Estado para controlar visibilidade da senha
+
   const [showPassword, setShowPassword] = useState(false);
 
   const [errors, setErrors] = useState({});

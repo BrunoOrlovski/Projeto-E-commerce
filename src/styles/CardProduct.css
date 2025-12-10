@@ -131,6 +131,48 @@
   padding: 0 20px;
 }
 
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%; /* Faz o botão ficar redondo */
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  z-index: 10; /* Garante que fique acima da imagem e outros elementos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  color: #ccc; /* Cor padrão (desativado) */
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1); /* Leve aumento ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Estado ativo (Coração vermelho) */
+.favorite-btn.active {
+  color: red;
+}
+
+/* Ajuste Responsivo para o botão não ficar enorme em telas pequenas */
+@media (max-width: 768px) {
+  .favorite-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    top: 5px;
+    right: 5px;
+  }
+}
+
 
 @media (max-width: 768px) {
   .product-card {
